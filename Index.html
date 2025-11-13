@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thanksgiving Adventures in Yorkshire Farms 2025 🦃🍁</title>
+<style>
+  :root{
+    --bg:#fffaf3;
+    --card:#ffffff;
+    --ink:#3b2b1a;
+    --accent:#8b4527;     /* Thanksgiving brown */
+    --accent2:#d39b37;    /* harvest gold */
+    --done:#e9f7df;
+    --muted:#6b5a5a;
+    --outline:#e2d4c1;
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+  }
+
+  .banner{
+    background: linear-gradient(90deg, var(--accent), #a65732);
+    color:white;
+    text-align:center;
+    padding:40px 20px 32px;
+  }
+  .banner h1{
+    font-size:clamp(1.9rem,4vw,2.8rem);
+    margin:0;
+  }
+  .banner p{
+    margin:10px 0 0;
+    font-size:1.1rem;
+  }
+
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px 16px 50px;
+  }
+
+  .safety{
+    background:#f8efe2;
+    border-left:6px solid var(--accent2);
+    padding:12px 14px;
+    margin-bottom:18px;
+    font-weight:600;
+    color:#5c472a;
+    font-size:.95rem;
+  }
+
+  h2{
+    margin-top:26px;
+    color:#4a2a2a;
+    font-size:1.35rem;
+  }
+
+  .levels{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin:10px 0 20px;
+  }
+  .levels button{
+    border:none;
+    padding:8px 14px;
+    border-radius:999px;
+    background:#f3eadb;
+    color:#4a3a2a;
+    cursor:pointer;
+    font-size:.95rem;
+    font-weight:600;
+  }
+  .levels button.active{
+    background:#4a3a2a;
+    color:white;
+  }
+
+  .grid{
+    display:grid;
+    gap:12px;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  }
+
+  .card{
+    background:var(--card);
+    border-radius:14px;
+    padding:14px;
+    display:grid;
+    grid-template-columns:52px 1fr 32px;
+    gap:12px;
+    min-height:88px;
+    border:1px solid var(--outline);
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    cursor:pointer;
+    transition:transform .08s ease, box-shadow .1s ease, background .1s ease;
+  }
+  .card:active{
+    transform:scale(.98);
+  }
+  .icon{
+    font-size:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .txt{
+    font-size:1.05rem;
+    font-weight:750;
+  }
+  .desc{
+    font-size:.9rem;
+    color:var(--muted);
+    margin-top:4px;
+  }
+  .tag{
+    margin-top:6px;
+    display:inline-block;
+    padding:3px 9px;
+    background:#f5ebd8;
+    color:#4a3a2a;
+    border-radius:999px;
+    font-size:.75rem;
+  }
+  .check{
+    width:28px;
+    height:28px;
+    border-radius:6px;
+    border:2px solid var(--accent2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff7e6;
+    font-size:18px;
+    align-self:center;
+  }
+  .done{
+    background:var(--done);
+  }
+  .done .check{
+    background:#baf3b3;
+    border-color:#2e7d32;
+  }
+  .done .check span{
+    transform:translateY(-1px);
+  }
+
+  .note{
+    margin-top:14px;
+    font-size:.9rem;
+    color:#6b5a5a;
+    text-align:center;
+  }
+
+  .divider{
+    margin:32px auto 16px;
+    text-align:center;
+    opacity:.75;
+    font-size:1.2rem;
+    letter-spacing:.25rem;
+  }
+  .thanks{
+    max-width:900px;
+    margin:0 auto 40px;
+    text-align:center;
+    background:#fff;
+    border:2px solid var(--accent2);
+    border-radius:14px;
+    padding:16px 14px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  }
+  .thanks .line1{
+    font-weight:800;
+    color:var(--accent);
+    font-size:1.05rem;
+    margin-bottom:6px;
+  }
+  .thanks .line2{
+    color:#4a2a2a;
+  }
+
+  footer{
+    text-align:center;
+    margin-top:32px;
+    color:#6b5a5a;
+    font-size:.9rem;
+  }
+</style>
+</head>
+
+<body>
+<div class="banner">
+  <h1>Thanksgiving Adventures in Yorkshire Farms 2025 🦃🍁</h1>
+  <p>A cozy, family-friendly scavenger hunt for all ages across our neighborhood!</p>
+</div>
+
+<div class="wrap">
+
+  <div class="safety">
+    Safety Tips: Stick with a buddy or adult • Be kind to pets • Look, don’t touch wildlife • Stay aware of your surroundings
+  </div>
+
+  <!-- Age filters -->
+  <div class="levels">
+    <button class="active" data-filter="all">All Ages</button>
+    <button data-filter="easy">Ages 3–6</button>
+    <button data-filter="medium">Ages 7–12</button>
+    <button data-filter="teens">Ages 13–17</button>
+  </div>
+
+  <h2>🍂 Thanksgiving Nature & Outdoor Finds</h2>
+  <div class="grid" id="nature"></div>
+
+  <h2>🏡 Neighborhood Fall & Thanksgiving Décor</h2>
+  <div class="grid" id="decor"></div>
+
+  <h2>📸 Photo Moments (Optional)</h2>
+  <div class="grid" id="photo"></div>
+
+  <h2>🧺 Bonus Thanksgiving Treasures</h2>
+  <div class="grid" id="bonus"></div>
+
+  <p class="note">
+    Tap a card to check it off. Use the age buttons at the top to show ideas for younger kids, big kids, or teens.
+  </p>
+
+  <footer>Yorkshire Farms Neighborhood • Happy Thanksgiving! 🦃🍂</footer>
+</div>
+
+<div class="divider" aria-hidden="true">🍁 🍂 🍃 🍁 🍂 🍃 🍁 🍂 🍃</div>
+<div class="thanks" role="note" aria-label="Thanksgiving scavenger hunt message">
+  <div class="line1">🍂 Thanks for joining the Yorkshire Farms Thanksgiving Adventure!</div>
+  <div class="line2">🦃 We’re grateful to celebrate with our neighbors.</div>
+</div>
+
+<script>
+const DATA = {
+  nature: [
+    {icon:"🍁", text:"A colorful fall leaf", desc:"Find a red, yellow, or orange leaf on the ground or a tree.", level:"easy"},
+    {icon:"🍂", text:"A crunchy leaf", desc:"Gently step on it and listen for the crunch!", level:"easy"},
+    {icon:"🌾", text:"Something that looks like a harvest field", desc:"Tall grass, wheat-like stalks, or dried plants.", level:"medium"},
+    {icon:"🪵", text:"A stick shaped like a letter", desc:"Maybe a T for Thanksgiving or Y for Yorkshire!", level:"medium"},
+    {icon:"🦃", text:"Something shaped like a turkey", desc:"A decoration, drawing, or shadow that looks like a turkey.", level:"teens"}
+  ],
+  decor: [
+    {icon:"🍗", text:"Thanksgiving-themed décor", desc:"Look for a turkey, cornucopia, pilgrim hat, or harvest scene.", level:"easy"},
+    {icon:"🍂", text:"A front door wreath with fall colors", desc:"Orange, gold, brown, or red leaf wreaths.", level:"easy"},
+    {icon:"🎃", text:"A leftover fall pumpkin", desc:"Carved or plain pumpkins still hanging around for fall.", level:"medium"},
+    {icon:"🧺", text:"A porch decorated for fall", desc:"Crates, lanterns, mums, scarecrows, or baskets.", level:"medium"},
+    {icon:"🌽", text:"Corn, wheat, or other harvest décor", desc:"Bundles of corn stalks, dried corn, or similar items.", level:"teens"}
+  ],
+  photo: [
+    {icon:"📸", text:"Family or team selfie", desc:"Smile together to remember your Thanksgiving adventure.", level:"all"},
+    {icon:"🧣", text:"Cozy fall outfit photo", desc:"Scarves, jackets, or boots — show off your fall style.", level:"easy"},
+    {icon:"🍁", text:"Leaf toss moment", desc:"Throw leaves in the air and snap a fun action shot.", level:"medium"},
+    {icon:"🌅", text:"Fall sky or sunset", desc:"Capture a beautiful sky with fall colors.", level:"teens"}
+  ],
+  bonus: [
+    {icon:"🍎", text:"Something that smells like fall spices", desc:"Cinnamon, apples, nutmeg, or a scented candle.", level:"easy"},
+    {icon:"🥧", text:"Something pie-themed", desc:"Pie décor, a sign, or maybe the real thing!", level:"medium"},
+    {icon:"🟧", text:"Something orange that’s not a pumpkin", desc:"A toy, chalk, leaf, or sign with orange color.", level:"easy"},
+    {icon:"🧾", text:"A word about being thankful", desc:"A sign, decoration, or note that mentions gratitude.", level:"medium"},
+    {icon:"❤️", text:"A heart shape in nature", desc:"Leaves, rocks, or patterns that make a heart.", level:"teens"}
+  ]
+};
+
+function ageLabel(level){
+  if(level === "easy") return "Ages 3–6";
+  if(level === "medium") return "Ages 7–12";
+  if(level === "teens") return "Ages 13–17";
+  if(level === "all") return "All Ages";
+  return "All Ages";
+}
+
+function makeCard(item){
+  const card = document.createElement("button");
+  card.type = "button";
+  card.className = "card";
+  card.dataset.level = item.level;
+  card.innerHTML = `
+    <div class="icon">${item.icon}</div>
+    <div>
+      <div class="txt">${item.text}</div>
+      <div class="desc">${item.desc}</div>
+      <div class="tag">${ageLabel(item.level)}</div>
+    </div>
+    <div class="check"><span>☐</span></div>
+  `;
+  card.addEventListener("click", () => {
+    const done = card.classList.toggle("done");
+    const span = card.querySelector(".check span");
+    span.textContent = done ? "✔" : "☐";
+  });
+  return card;
+}
+
+function mount(id, list){
+  const root = document.getElementById(id);
+  list.forEach(item => root.appendChild(makeCard(item)));
+}
+
+mount("nature", DATA.nature);
+mount("decor", DATA.decor);
+mount("photo", DATA.photo);
+mount("bonus", DATA.bonus);
+
+document.querySelectorAll(".levels button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".levels button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    const filter = btn.dataset.filter;
+    document.querySelectorAll(".card").forEach(card => {
+      const lv = card.dataset.level;
+      // "all" filter shows everything; otherwise show matching level plus "all"-age items
+      if(filter === "all" || lv === filter || lv === "all"){
+        card.style.display = "grid";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
